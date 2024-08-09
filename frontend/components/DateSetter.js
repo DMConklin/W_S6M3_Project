@@ -16,8 +16,8 @@ export default function DateSetter(props) {
 	const [daysInMonth, setDaysInMonth] = useState(new Date(year, month+1, 0).getDate())
 
 	const years = []
-	const months = Array.from(Array(12).keys())
-	const days = Array.from(Array(daysInMonth).keys())
+	const months = year == currentYear ? Array.from(Array(currentMonth+1).keys()) : Array.from(Array(12).keys())
+	const days = year == currentYear && month == currentMonth ? Array.from(Array(currentDay).keys()) : Array.from(Array(daysInMonth).keys())
 	
 	for (let i = currentYear; i >= 1995; i--) {
 		years.push(i)

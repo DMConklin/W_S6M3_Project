@@ -44,7 +44,7 @@ export default function DateSetter(props) {
 	}, [month,year])
 
 	return (
-		<div>
+		<div style={{textAlign: 'center'}}>
 			<select name="year" id="year" defaultValue={currentYear} onChange={handleYearChange}>
 				{years.map((year, idx) => {
 					return <option key={idx} value={year}>{year}</option>

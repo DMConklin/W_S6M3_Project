@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axois from "axios"
 import DateSetter from './DateSetter'
+import Media from './Media'
 
 function App() {
   const currentYear = new Date().getFullYear()
@@ -21,18 +22,23 @@ function App() {
       .catch(err => console.log(err))
   },[date])
 
+  console.log(data)
+
   return (
-    <DateSetter 
-      year={year}
-      month={month}
-      day={day}
-      currentYear={currentYear}
-      currentMonth={currentMonth}
-      currentDay={currentDay}
-      setYear={setYear}
-      setMonth={setMonth}
-      setDay={setDay}
-      setDate={setDate} />
+    <div>
+      <DateSetter 
+        year={year}
+        month={month}
+        day={day}
+        currentYear={currentYear}
+        currentMonth={currentMonth}
+        currentDay={currentDay}
+        setYear={setYear}
+        setMonth={setMonth}
+        setDay={setDay}
+        setDate={setDate} />
+      <Media data={data} />
+    </div>
   )
 }
 

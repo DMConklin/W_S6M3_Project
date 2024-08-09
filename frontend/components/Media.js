@@ -10,7 +10,7 @@ export default function Media(props) {
 					? <img style={{margin: '0 auto'}} src={data.url} /> 
 					: <iframe width="960" height="540" src={data.url}></iframe>
 				: <div></div>}
-				<p style={{padding: '30px'}}>{data ? data.explanation: ''}</p>
+			<p style={{padding: '30px'}}>{data ? data.explanation: ''}</p>
 		</div>
 	)
 }

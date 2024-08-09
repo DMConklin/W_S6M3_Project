@@ -45,16 +45,19 @@ export default function DateSetter(props) {
 
 	return (
 		<div style={{textAlign: 'center'}}>
+			<label for="year">Year:</label>
 			<select name="year" id="year" defaultValue={currentYear} onChange={handleYearChange}>
 				{years.map((year, idx) => {
 					return <option key={idx} value={year}>{year}</option>
 				})}
 			</select>
+			<label for="month">Month:</label>
 			<select name="month" id="month" defaultValue={currentMonth} onChange={handleMonthChange}>
 				{months.map((month, idx) => {
 					return <option key={idx} value={month}>{month+1}</option>
 				})}
 			</select>
+			<label for="day">Day:</label>
 			<select name="day" id="day" defaultValue={currentDay} onChange={handleDayChange}>
 				{days.map((day, idx) => {
 					return <option key={idx} value={day+1}>{day+1}</option>

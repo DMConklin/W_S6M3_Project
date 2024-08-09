@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react'
 
 export default function DateSetter(props) {
-	const {year, 
+	const {currentYear,
+			currentMonth,
+			currentDay,
+			year, 
 			setYear, 
 			month, 
 			setMonth, 
@@ -42,17 +45,17 @@ export default function DateSetter(props) {
 
 	return (
 		<div>
-			<select name="year" id="year" onChange={handleYearChange}>
+			<select name="year" id="year" defaultValue={currentYear} onChange={handleYearChange}>
 				{years.map((year, idx) => {
 					return <option key={idx} value={year}>{year}</option>
 				})}
 			</select>
-			<select name="month" id="month" onChange={handleMonthChange}>
+			<select name="month" id="month" defaultValue={currentMonth} onChange={handleMonthChange}>
 				{months.map((month, idx) => {
 					return <option key={idx} value={month}>{month+1}</option>
 				})}
 			</select>
-			<select name="day" id="day" onChange={handleDayChange}>
+			<select name="day" id="day" defaultValue={currentDay} onChange={handleDayChange}>
 				{days.map((day, idx) => {
 					return <option key={idx} value={day+1}>{day+1}</option>
 				})}
